@@ -33,9 +33,9 @@ def won?(board)
   end
 
   board.all? do |member|
-    if !(member.eql?(" "))
-      false 
-    end
+    if member.eql?(" ")
+      false
+    end 
   end
 end
 
