@@ -32,33 +32,21 @@ def won?(board)
     end
   end
 
-  x = board.all? do |member|
-    member.eql?(" ")
-  end
-  if x == true
-    false
+  board.all? do |member|
+    if !(member.eql?(" "))
+      false 
+    end
   end
 end
 
 def full?(board)
-  x = board.all? do |member|
+  board.all? do |member|
     member.eql?("X") || member.eql?("O")
-  end
-  if x == true
-    true
-  else
-    false
   end
 end
 
 def draw?(board)
-  if won?(board)
-    false
-  elsif !won?(board) && full?(board)
-    true
-  elsif !won?(board) && !full?(board)
-    false
-  end
+   !won?(board) && full?(board)
 end
 
 def over?(board)
